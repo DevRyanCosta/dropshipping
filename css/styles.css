@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    background-color: #242424;
+}
+
+header,
+.nav-area {
+    background-color: #121214;
+    max-width: 1375px;
+    padding: 0 20px 0 20px;
+    margin: 0 auto;
+}
+
+.top {
+    background-color: #121214;
+    font-family: 'Outfit';
+    user-select: none;
+}
+
+.top>hr {
+    border: none;
+    border-bottom: solid 1px #242424;
+    margin: 0;
+}
+
+.logo {
+    height: 60px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1375px;
+    padding: 5px 20px 0 20px;
+    color: #337CA0;
+}
+
+header .search {
+    display: flex;
+    width: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+header .search>* {
+    padding: 10px;
+    border: none;
+    border-radius: 0;
+    font-family: 'Outfit';
+    color: #FFF;
+}
+
+header .search input {
+    background-color: #1E1E20;
+    width: 80%;
+    outline: none;
+}
+
+header .search button {
+    width: 20%;
+    background-color: #181717;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 450px;
+    padding: 27px;
+    margin: 0 auto;
+}
+
+nav a {
+    color: #337CA0;
+    text-decoration: none;
+}
+
+nav a.selected {
+    font-weight: bold;
+}
+
+nav a:not(.selected) {
+    color: #337CA080;
+}
+
+nav a .number {
+    position: relative;
+    top: -8px;
+    border-radius: 4px;
+    padding: 1px 3px;
+    margin: 0 0 0 10px;
+    font-size: 13px;
+    color: #121214;
+    background-color: #00A3FF;
+}
+
+.banner-area {
+    max-width: 1375px;
+    padding: 10px 20px 0 20px;
+    margin: 0 auto;
+}
+
+.banner-area>* {
+    background-color: #121214;
+}
+
+.banner-50 {
+    display: inline-block;
+    height: 234px;
+    width: 50%;
+}
+
+.banner-50:nth-child(2) {
+    margin: 0 0 10px 0;
+}
+
+.banner-50:nth-child(3) {
+    margin: 0 0 10px 0;
+}
+
+.banner-100 {
+    height: 323px;
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+.products {
+    display: flex;
+    justify-content: space-between;
+    max-width: calc(1375px - 20px);
+    padding: 0 20px 0 20px;
+    margin: 0 auto;
+}
+
+.product {
+    background-color: #40406B;
+    padding: 1px 0 0 0;
+    border-radius: 5px;
+    text-align: center;
+    color: #E3E3E3;
+}
+
+.product-image {
+    width: 95%;
+    border-radius: 5px;
+}
+
+.product-name,
+.product-price {
+    display: block;
+    font-family: 'Fjalla One';
+    font-size: 20px;
+}
