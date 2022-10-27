@@ -179,25 +179,35 @@ nav a .number {
 
 .products {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     max-width: 1375px;
     padding: 0 20px 0 20px;
     margin: 0 auto;
 }
 
 .product {
+    width: calc(20% - 7px);
     background-color: #40406B;
-    padding: 1px 0 0 0;
+    padding: 1px 3px 0 4px;
+    margin: 0 2.5% 19px 2.5%;
+
     border-radius: 5px;
     text-align: center;
     color: #E3E3E3;
     cursor: pointer;
+    transition: all 0.25s;
+}
+
+.product:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 45px 1px #FFF1;
+    background-color: #40406B;
 }
 
 .product-image {
-    width: 95%;
+    display: block;
+    width: 100%;
     border-radius: 5px;
-    user-select: none;
 }
 
 .product-name,
@@ -209,26 +219,88 @@ nav a .number {
 
 footer {
     max-width: 1375px;
-    padding: 0 0 100px 0;
-    margin: 19px auto 0 auto;
+    padding: 11px 20px 0 20px;
+    margin: 0 auto;
+    padding: 75px 20px 100px 20px;
+    margin: 0 auto 0 auto;
     font-family: 'Open Sans';
     color: #FFF;
     background-color: #121214;
     user-select: none;
 }
 
-footer>div,
-footer>div:nth-of-type(2) {
+.footer-area {
     max-width: 1074px;
     margin: 0 auto;
 }
 
-footer>div:nth-of-type(2) {
+.footer-area .logo {
+    display: block;
+    width: 162px;
+    height: 94px;
+}
+
+.footer-area>div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: baseline;
 }
 
+.footer-area .contact {
+    align-self: flex-end;
+}
+
+.footer-area .quick-links {
+
+}
+
+.footer-area .quick-links>div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.footer-area .quick-links>div:nth-of-type(1) span {
+    margin: 0 0 45px 0;
+}
+
+.footer-area .quick-links span {
+    color: #ffffffa6;
+}
+
+.footer-area .subscribe>div {
+    display: flex;
+    align-self: center;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.footer-area .subscribe input,
+.footer-area .subscribe button {
+    width: auto;
+    border: none;
+    padding: 17px;
+}
+
+.footer-area .subscribe input {
+    width: 80%;
+}
+
+.footer-area .subscribe button {
+    width: 20%;
+    background-color: #478EFF;
+} 
+
+footer hr {
+    display: block;
+    max-width: 1074px;
+    margin: 69px auto 35px auto;
+    opacity: 0.2;
+}
+
+/* 
 footer>div>h4 {
     display: inline-block;
     width: calc(50% - 100px);
@@ -263,10 +335,7 @@ footer>div>h4:nth-of-type(2) {
     color: #FFFFFFA6;
 }
 
-footer hr {
-    opacity: 0.2;
-    margin: 69px 0 35px 0;
-}
+
 
 footer>div .subscribe {
     display: flex;
@@ -279,22 +348,13 @@ footer>div .subscribe input,
 footer>div .subscribe button {
     border: none;
     padding: 17px;
-}
+}*/
 
-footer>div .subscribe input {
-    width: 80%;
-}
-
-footer>div .subscribe button {
-    width: 20%;
-    background-color: #478EFF;
-}
-
-footer>div .icons {
+footer .icons {
     display: flex;
 }
 
-footer>div .icons a {
+footer .icons a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
