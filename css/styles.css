@@ -1,6 +1,21 @@
 body {
     margin: 0;
     background-color: #242424;
+    overflow-x: hidden;
+}
+
+.menu {
+    display: none;
+    margin: 10px 0 20px 0;
+    cursor: pointer;
+}
+
+.menu .bar {
+    height: 2.5px;
+    width: 20px;
+    border-radius: 1.75px;
+    margin: 4px 0;
+    background-color: #FFF;
 }
 
 header,
@@ -18,6 +33,15 @@ header,
     font-family: 'Outfit';
     user-select: none;
     overflow: hidden;
+    transition: all 0.35s;
+}
+
+.top .close {
+    display: none;
+    margin: 5px 0 0 20px;
+    font-size: 30px;
+    color: #FFF;
+    cursor: pointer;
 }
 
 .top>hr {
@@ -63,8 +87,13 @@ header .search * {
 
 header .search input {
     background-color: #1E1E20;
-    width: 80%;
+    width: calc(80% - 10px);
     outline: none;
+}
+
+header .search button {
+    width: calc(20% - 10px);
+    background-color: #181717;
 }
 
 header .info {
@@ -108,11 +137,6 @@ header .info a.notifications .number {
 
 header .info a.cart .number {
     background-color: #00CC83;
-}
-
-header .search button {
-    width: 20%;
-    background-color: #181717;
 }
 
 nav {
@@ -251,10 +275,6 @@ footer {
     align-self: flex-end;
 }
 
-.footer-area .quick-links {
-
-}
-
 .footer-area .quick-links>div {
     display: flex;
     flex-wrap: wrap;
@@ -291,7 +311,7 @@ footer {
 .footer-area .subscribe button {
     width: 20%;
     background-color: #478EFF;
-} 
+}
 
 footer hr {
     display: block;
@@ -299,56 +319,6 @@ footer hr {
     margin: 69px auto 35px auto;
     opacity: 0.2;
 }
-
-/* 
-footer>div>h4 {
-    display: inline-block;
-    width: calc(50% - 100px);
-    text-align: center;
-}
-
-footer>div>h4:nth-of-type(1) {
-    width: 50%;
-    margin: 16px 135px 16px 0;
-}
-
-footer>div>h4:nth-of-type(2) {
-    width: calc(50% - 135px);
-    margin: 16px 0 16px 0;
-}
-
-.quick-links {
-    display: flex;
-    justify-content: space-between;
-}
-
-.quick-links>div {
-    display: flex;
-    flex-direction: column;
-}
-
-.quick-links>div span:first-child {
-    margin: 0 0 45px 0;
-}
-
-.quick-links>div.gray {
-    color: #FFFFFFA6;
-}
-
-
-
-footer>div .subscribe {
-    display: flex;
-    width: 240px;
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-footer>div .subscribe input,
-footer>div .subscribe button {
-    border: none;
-    padding: 17px;
-}*/
 
 footer .icons {
     display: flex;
@@ -375,4 +345,45 @@ footer>div .company h4 {
     top: 6px;
     margin: 0 0 0 4px;
     font-weight: bold;
+}
+
+@media (max-width: 950px) {
+    .menu {
+        display: inline-block;
+    }
+
+    .top .logo,
+    .top hr {
+        display: none;
+    }
+
+    .top .close {
+        display: inline-block;
+    }
+
+    .top {
+        position: absolute;
+        top: 0;
+        min-height: 100vh;
+        width: auto;
+        transform: translate(100vw);
+    }
+
+    header {
+        display: block;
+    }
+
+    header .info {
+        margin: 30px 0 0 0;
+    }
+
+    nav {
+        display: block;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 15px;
+    }
 }
