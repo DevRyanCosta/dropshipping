@@ -6,15 +6,15 @@ body {
 
 .menu {
     display: none;
-    margin: 10px 0 20px 0;
+    margin: 15px 0 4px 20px;
     cursor: pointer;
 }
 
 .menu .bar {
-    height: 2.5px;
+    height: 2px;
     width: 20px;
-    border-radius: 1.75px;
-    margin: 4px 0;
+    border-radius: 1px;
+    margin: 6px 0;
     background-color: #FFF;
 }
 
@@ -32,8 +32,7 @@ header,
     background-color: #121214;
     font-family: 'Outfit';
     user-select: none;
-    overflow: hidden;
-    transition: all 0.35s;
+    transition: all 0.35s, opacity 0.5s;
 }
 
 .top .close {
@@ -55,9 +54,16 @@ header .logo {
     width: 201px;
 }
 
-.logo::before {
+header .logo::before {
+    display: block;
+    width: calc(201px - 9px);
+    height: calc(60px - 4px);
+    padding: 4px 0 0 9px;
+    border: 0.7px solid #337CA0;
     color: #FFF;
+    font-size: 12px;
     font-weight: bold;
+    line-height: 10px;
 }
 
 header {
@@ -77,7 +83,7 @@ header .search {
     overflow: hidden;
 }
 
-header .search * {
+header .search>* {
     padding: 10px;
     border: none;
     border-radius: 0;
@@ -87,13 +93,18 @@ header .search * {
 
 header .search input {
     background-color: #1E1E20;
-    width: calc(80% - 10px);
+    width: 75%;
     outline: none;
 }
 
 header .search button {
-    width: calc(20% - 10px);
+    width: 25%;
     background-color: #181717;
+    cursor: pointer;
+}
+
+header .search button>* {
+    vertical-align: middle;
 }
 
 header .info {
@@ -150,14 +161,23 @@ nav {
 nav a {
     color: #337CA0;
     text-decoration: none;
+    transition: all 0.35s;
 }
 
 nav a.selected {
     font-weight: bold;
 }
 
+nav a.selected:hover {
+    text-shadow: 0 0 8px #337CA0;
+}
+
 nav a:not(.selected) {
     color: #337CA080;
+}
+
+nav a:not(.selected):hover {
+    text-shadow: 0 0 8px #337CA080;
 }
 
 nav a .number {
@@ -172,6 +192,9 @@ nav a .number {
 }
 
 .banner-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     max-width: 1375px;
     padding: 11px 20px 0 20px;
     margin: 0 auto;
@@ -185,14 +208,8 @@ nav a .number {
     display: inline-block;
     height: 234px;
     width: calc(50% - 5.5px);
-}
-
-.banner-50:nth-child(2) {
-    margin: 0 5.5px 14px 0;
-}
-
-.banner-50:nth-child(3) {
-    margin: 0 0 14px 5.5px;
+    border-radius: 3px;
+    margin: 0 0 15px 0;
 }
 
 .banner-100 {
@@ -210,11 +227,10 @@ nav a .number {
 }
 
 .product {
-    width: calc(20% - 7px);
+    width: calc(20% - 8px);
     background-color: #40406B;
-    padding: 1px 3px 0 4px;
+    padding: 1px 4px 0 4px;
     margin: 0 2.5% 19px 2.5%;
-
     border-radius: 5px;
     text-align: center;
     color: #E3E3E3;
@@ -250,7 +266,6 @@ footer {
     font-family: 'Open Sans';
     color: #FFF;
     background-color: #121214;
-    user-select: none;
 }
 
 .footer-area {
@@ -262,6 +277,7 @@ footer {
     display: block;
     width: 162px;
     height: 94px;
+    margin: 0 0 -50px 0;
 }
 
 .footer-area>div {
@@ -293,6 +309,7 @@ footer {
 .footer-area .subscribe>div {
     display: flex;
     align-self: center;
+    width: 248px;
     border-radius: 6px;
     overflow: hidden;
 }
@@ -311,6 +328,7 @@ footer {
 .footer-area .subscribe button {
     width: 20%;
     background-color: #478EFF;
+    cursor: pointer;
 }
 
 footer hr {
@@ -334,6 +352,11 @@ footer .icons a {
     border-radius: 50%;
     margin: 0 15px 0 0;
     text-decoration: none;
+    transition: all 0.25s;
+}
+
+footer .icons a:hover {
+    transform: scale(1.2);
 }
 
 footer>div .company {
@@ -343,13 +366,14 @@ footer>div .company {
 footer>div .company h4 {
     position: relative;
     top: 6px;
+    display: inline-block;
     margin: 0 0 0 4px;
     font-weight: bold;
 }
 
 @media (max-width: 950px) {
     .menu {
-        display: inline-block;
+        display: block;
     }
 
     .top .logo,
@@ -364,9 +388,10 @@ footer>div .company h4 {
     .top {
         position: absolute;
         top: 0;
-        min-height: 100vh;
+        height: 100vh;
         width: auto;
         transform: translate(100vw);
+        opacity: 0;
     }
 
     header {
@@ -385,5 +410,35 @@ footer>div .company h4 {
     nav a {
         display: block;
         margin: 15px;
+    }
+
+    .footer-area .logo {
+        width: 90%;
+        margin: 0 5%;
+    }
+
+    .footer-area .logo::before {
+        display: block;
+        text-align: center;
+    }
+
+    .footer-area>div>div {
+        margin: 30px 0;
+    }
+
+    .footer-area>div,
+    .footer-area>div>div {
+        display: block;
+        text-align: center;
+    }
+
+    .footer-area .quick-links div {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .footer-area .subscribe>div {
+        max-width: 600px;
+        margin: 0 auto;
     }
 }
